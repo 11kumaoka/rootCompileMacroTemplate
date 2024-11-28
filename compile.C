@@ -9,14 +9,11 @@
 
 int main(){
   TChain *tc = new TChain("tree");
-
-  std::string fDir = "./";
   
-  // please replace the file name to yours
-  // std::string fInputName = fDir + "fInput.root";
-  // tc->Add("./input.root"); 
-  std::string fInputName = fDir + "ana439_Electron_2GeV_00150.root";
-  tc->Add("./ana439_Electron_2GeV_00150.root"); 
+  // please replace directory and "fInput.root" the file name to yours
+  std::string fDir = "./";
+  std::string fInputName = fDir + "fInput.root";
+  tc->Add(fInputName.c_str());
   std::string fOutputName = fDir+"fOutput.root";
 
   TTree *tt = (TTree*)tc;
